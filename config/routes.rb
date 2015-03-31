@@ -9,5 +9,11 @@ Rails.application.routes.draw do
         end      
       end
     end
+    scope '/users' do
+      scope '/:user' do
+        get '/visits' => 'city_users#show'
+        post '/visits' => 'city_users#update'
+      end
+    end
   end 
 end
