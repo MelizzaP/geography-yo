@@ -18,8 +18,9 @@ class CityUsersController < ApplicationController
       else
         render json: 'User and/or city not in database :-(', status: 400
       end
-    end
+    else
       render json: 'City or state missing from parameters', status: 400
+    end
   end
 
   def index
