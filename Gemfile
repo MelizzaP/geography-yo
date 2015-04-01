@@ -45,3 +45,6 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+
+#gem for large queries/pagination
+gem 'kaminari'
