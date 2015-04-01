@@ -56,7 +56,11 @@ All of the endpoints are paginated, in order to view more results simply add 'pa
 
 For Example:
 ```
-  /v1/states/{state}/cities?page(3)
+  /v1/states/{state}/cities?page=3
+``` 
+ -- OR --
+ ```
+  /v1/states/{state}/cities/{city}?radius=100&page=3
 ``` 
 Would return the third page of results
 
