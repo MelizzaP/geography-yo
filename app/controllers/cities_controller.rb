@@ -10,6 +10,8 @@ class CitiesController < ApplicationController
     if(params[:radius].to_i == params[:radius])
       nearby_cities = City.radius_search(params)
       render json: nearby_cities, status: 200
+    else
+      render json: "Your request needs to have a numerical value for it's radius", status: 400
     end
   end
   
