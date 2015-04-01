@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     end
     scope '/users' do
       scope '/:user' do
-        get '/visits' => 'city_users#show'
-        post '/visits' => 'city_users#update'
+        get '/visits' => 'city_users#index'
+        post '/visits' => 'city_users#new'
       end
     end
   end 
