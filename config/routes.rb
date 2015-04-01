@@ -15,5 +15,5 @@ Rails.application.routes.draw do
         post '/visits' => 'city_users#new'
       end
     end
-  end 
+  end
 end
