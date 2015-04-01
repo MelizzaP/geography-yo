@@ -7,7 +7,7 @@ class CitiesController < ApplicationController
   end
   
   def index
-    if(params[:radius])
+    if(params[:radius] && !params[:radius].match(/\D/))
       nearby_cities = City.radius_search(params)
       render json: nearby_cities, status: 200
     else
