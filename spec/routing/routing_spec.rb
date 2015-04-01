@@ -10,7 +10,7 @@ RSpec.describe 'Routes' do
   end
   
   it 'routes /v1/states/{state}/cities/{city}?radius=100' do
-    expect(get: '/v1/states/VA/cities/Yorktown?radius=100'). to route_to(
+    expect(get: '/v1/states/VA/cities/Yorktown?radius=100').to route_to(
       controller: 'cities',
       action: 'index',
       state: 'VA',
@@ -18,4 +18,19 @@ RSpec.describe 'Routes' do
       radius: '100'
     )
   end
+  
+  it 'routes /v1/users/{user}/visits' do
+    expect(post: '/v1/users/1/visits').to route_to(
+      controller: 'city_users',
+      action: 'new',
+      user: '1'
+    )
+    
+    expect(get: '/v1/users/1/visits').to route_to(
+      controller: 'city_users',
+      action: 'index',
+      user: '1'
+    ) 
+  end
+  
 end
