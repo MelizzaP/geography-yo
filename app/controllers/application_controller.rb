@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   rescue_from ActionView::MissingTemplate do |exception|
-    render json: "Your request needs to have a radius", status: 400
+    render json: "Your request needs to have a numerical value for it's radius", status: 400
   end
 end
