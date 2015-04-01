@@ -17,5 +17,8 @@ class CityUsersController < ApplicationController
   end
 
   def index
+    cities = City.includes(:users).where(users: { id: params[:user]})
+    
+    render json: cities, status: 200
   end
 end
